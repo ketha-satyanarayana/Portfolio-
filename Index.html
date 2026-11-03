@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ketha Satyanarayana | Electrical Engineering Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f6fb; --surface:#ffffff; --ink:#14213d; --muted:#4a5878;
+  --brand:#1f6f8b; --accent:#f4a259; --line:#d6e0ee; --hero:#14213d; --hero-ink:#f2f6fb;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1626; --surface:#18233a; --ink:#eaf0fa; --muted:#a9b6d0;
+    --brand:#6cc3de; --accent:#f4a259; --line:#2b3a58; --hero:#0a1120; --hero-ink:#eaf0fa;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1626; --surface:#18233a; --ink:#eaf0fa; --muted:#a9b6d0;
+  --brand:#6cc3de; --accent:#f4a259; --line:#2b3a58; --hero:#0a1120; --hero-ink:#eaf0fa;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.2;margin:0 0 .6em}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hero);z-index:11}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--hero);color:var(--hero-ink)}
+nav{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px}
+.logo{font:800 1.15rem Sora,sans-serif;color:var(--hero-ink);text-decoration:none}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;overflow-x:auto}
+nav ul a{display:block;padding:8px 12px;border-radius:8px;color:var(--hero-ink);text-decoration:none;font-weight:500;font-size:.95rem}
+nav ul a:hover{background:rgba(255,255,255,.12)}
+
+.hero{background:var(--hero);color:var(--hero-ink);position:relative;overflow:hidden;padding:72px 20px 96px}
+.hero-inner{max-width:1000px;margin:auto;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.2rem,7vw,4rem);font-weight:800;max-width:14ch}
+.hero p{max-width:46ch;font-size:1.15rem;color:#c9d6ea}
+.btn{display:inline-block;margin:8px 10px 0 0;padding:12px 22px;border-radius:10px;font-weight:700;text-decoration:none;font-family:Sora,sans-serif;font-size:.95rem}
+.btn.primary{background:var(--accent);color:#14213d}
+.btn.ghost{border:2px solid var(--hero-ink);color:var(--hero-ink)}
+.shape{position:absolute;border-radius:50%}
+.s1{width:320px;height:320px;right:-80px;top:-60px;background:var(--brand);opacity:.55}
+.s2{width:140px;height:140px;right:150px;bottom:-40px;background:var(--accent);opacity:.9}
+.s3{width:90px;height:90px;right:40px;bottom:90px;border:10px solid var(--hero-ink);opacity:.25}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero p,.hero .btn{animation:rise .7s ease both}
+  .hero p{animation-delay:.12s}.hero .btn{animation-delay:.24s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+
+section{max-width:1000px;margin:auto;padding:64px 20px 8px}
+section h2{font-size:clamp(1.6rem,4vw,2.2rem);padding-bottom:10px;border-bottom:4px solid var(--accent);display:inline-block}
+.lead{color:var(--muted);max-width:62ch}
+.about{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:start}
+.avatar{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;font:800 4rem Sora,sans-serif;color:#fff}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px}
+.fact{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:10px;padding:12px 14px}
+.fact b{display:block;font-family:Sora,sans-serif}
+.fact span{color:var(--muted);font-size:.95rem}
+
+.bars{display:grid;gap:18px;max-width:640px}
+.bar-top{display:flex;justify-content:space-between;font-weight:500}
+.track{height:12px;border-radius:99px;background:var(--line);overflow:hidden}
+.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--accent))}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.thumb{height:110px;display:grid;place-items:center;font-size:2.6rem}
+.t1{background:var(--brand)}.t2{background:var(--accent)}.t3{background:#6d597a}
+.card div.body{padding:18px 20px 22px}
+.card h3{font-size:1.15rem;margin-bottom:.3em}
+.card p{margin:0;color:var(--muted);font-size:.98rem}
+.tag{display:inline-block;margin-top:12px;padding:3px 10px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:.82rem}
+
+form{display:grid;gap:14px;max-width:520px}
+label{font-weight:500;display:grid;gap:6px}
+input,textarea{font:inherit;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+button{font:700 .95rem Sora,sans-serif;padding:13px 22px;border:0;border-radius:10px;background:var(--brand);color:#fff;cursor:pointer;justify-self:start}
+#msg{min-height:1.5em;color:var(--brand);font-weight:500}
+
+footer{margin-top:72px;background:var(--hero);color:var(--hero-ink);text-align:center;padding:28px 20px calc(28px + env(safe-area-inset-bottom,0px))}
+footer p{margin:0;font-size:.95rem}
+@media (max-width:640px){
+  .about{grid-template-columns:1fr}.avatar{width:140px;height:140px;font-size:3rem}
+  .s1{width:220px;height:220px}
+  nav{flex-direction:column;align-items:flex-start;gap:4px}
+}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+.chip{padding:6px 14px;border-radius:99px;background:var(--surface);border:1px solid var(--line);font-size:.92rem}
+.chip.learn{border-style:dashed;border-color:var(--accent)}
+.group{margin-bottom:22px}.group h3{font-size:1.05rem;margin-bottom:.5em}
+.item{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:12px;padding:16px 20px;margin-bottom:14px}
+.item h3{font-size:1.1rem;margin:0}.item .meta{color:var(--muted);font-size:.95rem;margin:2px 0 8px}
+.item ul{margin:0;padding-left:1.2em;color:var(--muted)}.item li{margin-bottom:4px}
+.links{display:grid;gap:12px;max-width:520px}
+.links a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;text-decoration:none;font-weight:500}
+.links a:hover{border-color:var(--brand)}.links small{display:block;color:var(--muted);font-weight:400}
+nav ul{max-width:100%}
+</style>
+</head>
+<body>
+<header>
+  <nav aria-label="Main">
+    <a class="logo" href="#home">Satyanarayana<span>.</span></a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Internships</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div class="hero" id="home">
+  <div class="shape s1"></div><div class="shape s2"></div><div class="shape s3"></div>
+  <div class="hero-inner">
+    <h1>Hi, I’m Ketha Satyanarayana.</h1>
+    <p>Electrical and Electronics Engineering student and CAE and simulation enthusiast, building skills in MATLAB, Simulink, embedded systems and power systems.</p>
+    <a class="btn primary" href="#projects">See my projects</a>
+    <a class="btn ghost" href="#contact">Contact me</a>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About me</h2>
+  <div class="about">
+    <div class="avatar" aria-hidden="true">KS</div>
+    <div>
+      <p class="lead">I am a B.Tech student in Electrical and Electronics Engineering at GITAM University, with a diploma in the same field. I enjoy modelling systems in MATLAB and Simulink and building hardware prototypes with Arduino.</p>
+      <p class="lead">I have worked in two industry settings, a naval dockyard and a power substation, and I am now learning CAE tools such as ANSYS and Altair HyperWorks.</p>
+      <div class="facts">
+        <div class="fact"><b>Degree</b><span>B.Tech EEE, GITAM University</span></div>
+        <div class="fact"><b>CGPA</b><span>9.09</span></div>
+        <div class="fact"><b>Focus</b><span>CAE, simulation, power systems</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="item"><h3>B.Tech, Electrical and Electronics Engineering</h3><p class="meta">GITAM University, 2027</p><ul><li>CGPA: 9.09</li></ul></div>
+  <div class="item"><h3>Diploma, Electrical and Electronics Engineering</h3><p class="meta">Smt. B. Seetha Polytechnic, 2022</p><ul><li>Percentage: 91.92%</li></ul></div>
+  <div class="item"><h3>Secondary School</h3><p class="meta">Divine Mercy E.M. High School, Board of Secondary Education, Andhra Pradesh, 2021</p><ul><li>CGPA: 9.7</li></ul></div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="group"><h3>Engineering and simulation</h3><div class="chips"><span class="chip">MATLAB</span><span class="chip">Simulink</span><span class="chip">LTspice</span><span class="chip">AutoCAD Electrical</span></div></div>
+  <div class="group"><h3>CAE tools (dashed means currently learning)</h3><div class="chips"><span class="chip learn">ANSYS</span><span class="chip learn">Altair HyperWorks</span><span class="chip">Basic FEA</span><span class="chip">CAD modelling</span><span class="chip">Loads and boundary conditions</span></div></div>
+  <div class="group"><h3>Core electrical engineering</h3><div class="chips"><span class="chip">Circuit analysis</span><span class="chip">Electrical machines</span><span class="chip">Power systems</span><span class="chip">Power electronics</span></div></div>
+  <div class="group"><h3>Programming and embedded</h3><div class="chips"><span class="chip">C</span><span class="chip">Python</span><span class="chip">Arduino</span><span class="chip">ESP32</span><span class="chip">Linux (Ubuntu)</span></div></div>
+  <div class="group"><h3>Certifications</h3><div class="chips"><span class="chip">Python Programming, Coursera</span><span class="chip">Electrical Power Generation: An Industrial Outlook, Coursera</span></div></div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p class="lead">Two projects that combine simulation and hardware.</p>
+  <div class="grid">
+    <article class="card"><div class="thumb t1" aria-hidden="true">🔋</div><div class="body"><h3>EV Battery Monitoring and Management System</h3><p>A MATLAB and Simulink model that tracks battery voltage, current and temperature, with basic control logic. It also studies over-voltage, under-voltage and over-temperature protection.</p><span class="tag">MATLAB/Simulink</span></div></article>
+    <article class="card"><div class="thumb t2" aria-hidden="true">🤖</div><div class="body"><h3>Autonomous Line Following Robot</h3><p>An Arduino Uno robot with IR sensors, an HC-SR04 ultrasonic sensor and an L298N motor driver. It follows a line and avoids obstacles on its own.</p><span class="tag">Arduino</span></div></article>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Internships</h2>
+  <div class="item"><h3>Electrical Engineering Intern</h3><p class="meta">Naval Dockyard, Visakhapatnam, 1 month</p><ul><li>Saw maintenance, testing, repair and overhauling of motors and generators used in marine applications.</li><li>Observed motor starters, relays, circuit breakers, controllers and Automatic Transfer Switches.</li><li>Learned electrical safety, preventive maintenance and industrial protection systems.</li><li>Visited the motor winding section to see rewinding, insulation and repair.</li></ul></div>
+  <div class="item"><h3>Electrical Substation Intern</h3><p class="meta">APEPDCL 11/33 kV Pedurthi Substation, 1 month</p><ul><li>Observed operation and maintenance of substation equipment and power distribution systems.</li><li>Learned how power transformers, circuit breakers, CTs, PTs and protection relays work.</li><li>Understood substation layout, electrical safety and distribution operations.</li></ul></div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="lead">I am happy to connect about internships, projects and collaborations. Reach me on LinkedIn or see my work on GitHub.</p>
+  <div class="links">
+    <a href="https://linkedin.com/in/ketha-satyanarayana" target="_blank" rel="noopener">LinkedIn<small>linkedin.com/in/ketha-satyanarayana</small></a>
+    <a href="https://github.com/ketha-satyanarayana" target="_blank" rel="noopener">GitHub<small>github.com/ketha-satyanarayana</small></a>
+  </div>
+</section>
+</main>
+
+<footer><p>© 2026 Ketha Venkata Naga Sai Satyanarayana | Electrical and Electronics Engineering</p></footer>
+</body>
+</html>
